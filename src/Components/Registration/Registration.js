@@ -21,6 +21,9 @@ const Registration = () => {
         const photoUrl = form.photoUrl.value;
         console.log(name, email, password, confirmPassword, photoUrl);
 
+       
+
+    
         if (password === confirmPassword) {
             // Passwords match, proceed with registration
             CreateNewUser(email, password)
@@ -36,7 +39,7 @@ const Registration = () => {
                     }));
 
 
-                    // Update user profile photo URL
+                    // Update user profile with name and photo URL
                     updateProfile(createdUser, {
                         displayName: name,
                         photoURL: photoUrl,

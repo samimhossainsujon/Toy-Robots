@@ -19,7 +19,7 @@ const Login = () => {
         const form = event.target;
         const email = form.elements.email.value;
         const password = form.elements.password.value;
-        console.log(email, password);
+        // console.log(email, password);
 
 
         UserLogin(email, password)
@@ -28,7 +28,7 @@ const Login = () => {
                 setSuccess(Swal.fire({
                     icon: "success",
                     title: "Success",
-                    text: "Registered successfully",
+                    text: "Login successful",
                 }));
 
             })

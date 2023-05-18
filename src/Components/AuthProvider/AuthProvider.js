@@ -13,7 +13,7 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
 
-    const [user, setUser] = useState(null);
+    const [User, setUser] = useState(null);
     const [Loading, setLoading] = useState(true);
 
 
@@ -51,11 +51,11 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         signInWithPopup(auth, GoogleProvider)
             .then((result) => {
-                const LoggedGoogleUser = result.user; // Change 'result.User' to 'result.user'
-                console.log(LoggedGoogleUser);
+                const LoggedGoogleUser = result.user;
+               
             })
             .catch((error) => {
-                console.log(error);
+                // console.log(error);
             });
     };
 
@@ -95,6 +95,7 @@ const AuthProvider = ({ children }) => {
         UserGoogleLogin,
         UserLogOut,
         Loading,
+        User,
     };
 
     return (

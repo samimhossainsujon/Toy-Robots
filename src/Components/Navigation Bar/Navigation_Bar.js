@@ -1,20 +1,22 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Navigation_Bar = () => {
 
 
-    // const { user, LogOut } = useContext(AuthContext);
+    const { User, UserLogOut } = useContext(AuthContext);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-    // const handleLogOut = () => {
-    //     LogOut()
-    //         .then(() => {
-    //             // console.log("Logged out successfully");
-    //         })
-    //         .catch((error) => {
+    const handleDropdownHover = () => {
+        setIsDropdownOpen(true);
+    };
 
-    //         });
-    // };
+    const handleDropdownLeave = () => {
+        setIsDropdownOpen(false);
+    };
+
+
 
     const webSiteName = <>
         <h1>Toy Robots</h1>
@@ -27,26 +29,39 @@ const Navigation_Bar = () => {
         <li><Link to='/myToys'>My Toys</Link></li>
         <li><Link to='/addAToy'>Add A Toy</Link></li>
         <li><Link to='/blog'>Blogs</Link></li>
-        <li><Link to='/login'>login</Link></li>
-
-        {/* {user?.email ? <>           
-            <li><button onClick={handelLogOut}>Log Out</button></li>
-            : <li><Link to='/login'>login</Link></li>
-        </>
-        } */}
 
 
+       {/* 
+       //===========================
+       // user profile picture change and logout button set up
+       //===========================
+       */}
 
-
-        {/* <label className="btn btn-ghost btn-circle avatar"> */}
-        {/* {user && (
-            <div className="w-24 rounded-full profiles__group">
-              <img src={user?.photoURL} alt='' />
-              <p>{user?.displayName}</p>
-             <p>{user?.email}</p>
-              </div>
-                   {/* )} */}
-        {/* </label> */}
+            <div>
+                {User ? (
+                    <div className={`hover:dropdown ${isDropdownOpen ? 'dropdown-open' : ''}`} onMouseEnter={handleDropdownHover} onMouseLeave={handleDropdownLeave}>
+                        <label className="btn btn-ghost btn-circle avatar">
+                            {User && (
+                                <div className="w-24 rounded-full profiles__group">
+                                    <img src={User.photoURL} alt="" />
+                                </div>
+                            )}
+                        </label>
+                        {User?.email && isDropdownOpen && (
+                            <div className="dropdown-content">
+                                <button className='btn btn-outline btn-secondary' onClick={UserLogOut}>Log Out</button>
+                            </div>
+                        )}
+                    </div>
+                ) : (
+                    <li>
+                        <button className='btn btn-outline btn-secondary'>
+                            <Link to="/login">Login</Link>
+                        </button>
+                    </li>
+                )}
+            </div>
+     
 
 
     </>
