@@ -31,37 +31,37 @@ const Navigation_Bar = () => {
         <li><Link to='/blog'>Blogs</Link></li>
 
 
-       {/* 
+        {/* 
        //===========================
        // user profile picture change and logout button set up
        //===========================
        */}
 
-            <div>
-                {User ? (
-                    <div className={`hover:dropdown ${isDropdownOpen ? 'dropdown-open' : ''}`} onMouseEnter={handleDropdownHover} onMouseLeave={handleDropdownLeave}>
-                        <label className="btn btn-ghost btn-circle avatar">
-                            {User && (
-                                <div className="w-24 rounded-full profiles__group">
-                                    <img src={User.photoURL} alt="" />
-                                </div>
-                            )}
-                        </label>
-                        {User?.email && isDropdownOpen && (
-                            <div className="dropdown-content">
-                                <button className='btn btn-outline btn-secondary' onClick={UserLogOut}>Log Out</button>
+        <div>
+            {User ? (
+                <div className={`hover:dropdown ${isDropdownOpen ? 'dropdown-open' : ''}`} onMouseEnter={handleDropdownHover} onMouseLeave={handleDropdownLeave}>
+                    <label className="btn btn-ghost btn-circle avatar">
+                        {User && (
+                            <div className="w-24 rounded-full profiles__group">
+                                <img src={User.photoURL} alt="" />
                             </div>
                         )}
-                    </div>
-                ) : (
-                    <li>
-                        <button className='btn btn-outline btn-secondary'>
-                            <Link to="/login">Login</Link>
-                        </button>
-                    </li>
-                )}
-            </div>
-     
+                    </label>
+                    {User?.email && isDropdownOpen && (
+                        <div className="dropdown-content">
+                            <button className='btn btn-outline btn-secondary' onClick={UserLogOut}>Log Out</button>
+                        </div>
+                    )}
+                </div>
+            ) : (
+                <li>
+                    <button className='btn btn-outline btn-secondary'>
+                        <Link to="/login">Login</Link>
+                    </button>
+                </li>
+            )}
+        </div>
+
 
 
     </>

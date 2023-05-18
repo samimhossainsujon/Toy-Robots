@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
@@ -7,11 +7,17 @@ import Swal from 'sweetalert2';
 const Login = () => {
     const { UserLogin, UserGoogleLogin } = useContext(AuthContext);
     const [error, setError] = useState();
+    const Navigate = useNavigate();
+    const Location = useLocation();
     const [Success, setSuccess] = useState();
+
+    const from = Location.state?.from?.pathname || "/";
+
 
     const UserHandleGoogleLogin = () => {
         UserGoogleLogin();
-        console.log(UserGoogleLogin);
+        Navigate(from, { replace: true });
+        // console.log(UserGoogleLogin);
     };
 
     const HandleUserLogin = (event) => {
@@ -29,8 +35,9 @@ const Login = () => {
                     icon: "success",
                     title: "Success",
                     text: "Login successful",
-                }));
 
+                }));
+                Navigate(from, { replace: true });
             })
             .catch((error) => {
                 setError(Swal.fire({

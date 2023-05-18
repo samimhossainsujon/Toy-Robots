@@ -17,6 +17,7 @@ import Footer from './Components/Footer/Footer';
 import Login from './Components/Login/Login';
 import Registration from './Components/Registration/Registration';
 import My_Toys from './Components/My Toys/My_Toys';
+import PrivateRoutes from './Components/PrivateRoutes/PrivateRoutes';
 
 
 
@@ -33,12 +34,14 @@ const router = createBrowserRouter([
 
       {
         path: "/addAToy",
-        element: <Add_A_Toy></Add_A_Toy>,
+        element: <PrivateRoutes>
+          <Add_A_Toy></Add_A_Toy>
+        </PrivateRoutes>
       },
 
       {
         path: "/myToys",
-        element: <My_Toys></My_Toys>
+        element: <PrivateRoutes><My_Toys></My_Toys></PrivateRoutes>
       },
 
 
