@@ -1,9 +1,11 @@
 import React from 'react';
+import Navigation_Bar from '../Navigation Bar/Navigation_Bar';
 
 const Header = () => {
     return (
         <div>
-            <h1>this is header </h1>
+          
+           <Navigation_Bar></Navigation_Bar>
 
         </div>
     );
