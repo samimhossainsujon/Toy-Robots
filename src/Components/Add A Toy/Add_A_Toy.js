@@ -4,18 +4,22 @@ import Swal from 'sweetalert2';
 const Add_A_Toy = () => {
     const [Success, setSuccess] = useState();
     const [error, setError] = useState();
+  
 
     const AddToy = (event) => {
         event.preventDefault();
         const form = event.target;
         const photoUrl = form.photoUrl.value;
-        const name = form.name.value;
+        const ToyName = form.ToyName.value;
         const price = form.price.value;
         const rating = form.rating.value;
+        const availableQuantity = form.availableQuantity.value;
+        const SellerName = form.SellerName.value;
         const detailsPage = form.detailsPage.value;
-        const allDetails = { photoUrl, name, price, rating, detailsPage };
-
+        const sellerEmail = form.sellerEmail.value;
+        const allDetails = { photoUrl, ToyName, price, rating,availableQuantity,SellerName, detailsPage, sellerEmail };
         console.log(allDetails);
+        
 
         fetch('http://localhost:5000/addToy', {
             method: 'POST',
@@ -39,8 +43,10 @@ const Add_A_Toy = () => {
                     text: "Please try again"
                 }));
             });
-
     }
+
+
+
 
 
     return (
@@ -64,7 +70,7 @@ const Add_A_Toy = () => {
                         <span className="text-center">Toy Name</span>
                     </label>
 
-                    <input type="text" name='name' placeholder="Enter your Toy name"
+                    <input type="text" name='ToyName' placeholder="Enter your Toy name"
                         className="input input-bordered input-error w-full mb-2" required />
 
 
@@ -99,13 +105,55 @@ const Add_A_Toy = () => {
                 </div>
 
 
+                <div>
+                    <label className="label">
+                        <span className="text-center">Available Quantity</span>
+                    </label>
+                    <input type="number" name='availableQuantity'
+                        placeholder="Available Quantity"
+                        className="input input-bordered input-error w-full mb-2"
+                        required
+                    />
+
+
+                </div>
+
+
+                <div>
+                    <label className="label">
+                        <span className="text-center">Seller Name</span>
+                    </label>
+                    <input type="text" name='SellerName'
+                        placeholder="enter your Seller Name"
+                        className="input input-bordered input-error w-full mb-2"
+                        required
+                    />
+
+
+                </div>
+
+
+                <div>
+                    <label className="label">
+                        <span className="text-center">Seller Email</span>
+                    </label>
+                    <input type="email" name='sellerEmail'
+                        placeholder="enter your author email"
+                        className="input input-bordered input-error w-full mb-2"
+                        required
+                    />
+
+
+                </div>
+
+
 
 
 
 
                 <div>
                     <label className="label">
-                        <span className="text-center">Photo Url</span>
+                        <span className="text-center">Description Product </span>
                     </label>
 
                     <textarea type="text" name='detailsPage'
@@ -117,7 +165,11 @@ const Add_A_Toy = () => {
                         className="input input-bordered input-error w-full h-52 mb-2 p-5" />
 
 
-                </div>
+                </div>               
+
+
+
+
                 <button className='btn btn-outline btn-secondary'> add toy</button>
 
 
