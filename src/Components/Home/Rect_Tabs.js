@@ -26,6 +26,10 @@ const Rect_Tabs = () => {
 
   return (
     <div className='mt-5 mb-5'>
+      <div className='text-center font-extrabold text-3xl mt-5 mb-5 underline'>
+      <h1>Shop By Category</h1>
+      </div>
+
       <Tabs>
         <TabList className='flex items-center justify-center'>
           <Tab onClick={() => handleTabClick("Programmable")}>Programmable Robots</Tab>
