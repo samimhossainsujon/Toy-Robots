@@ -1,19 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import Rating from 'react-rating-stars-component';
 import Rating from 'react-rating';
 import {FaRegStar, FaStar } from 'react-icons/fa';
 
-const All_Toys_Cart = ({ allToy }) => {
-
-
-
+const RemoteControlRobots = ({ReactTab}) => {
     const { _id, photoUrl, ToyName, price, availableQuantity, rating: originalRating,
-        SellerName, detailsPage, sellerEmail } = allToy;
-    console.log(allToy);
-
+        SellerName, detailsPage, sellerEmail } = ReactTab;
     const rating = 4;
     const ratingString = rating.toString();
+
     return (
         <div data-aos="fade-left"
             data-aos-offset="300"
@@ -60,6 +55,6 @@ const All_Toys_Cart = ({ allToy }) => {
 
         </div>
     );
-};
+}
 
-export default All_Toys_Cart;
+export default RemoteControlRobots;

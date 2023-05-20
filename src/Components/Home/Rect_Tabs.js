@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import ToyTabCard from './ToyTabCard';
+import TransformingRobots from './TabCart/TransformingRobots';
+import RemoteControlRobots from './TabCart/RemoteControlRobots';
+import ProgrammableRobots from './TabCart/ProgrammableRobots';
 
 const Rect_Tabs = () => {
   const [ReactTabs, setReactTabs] = useState([]);
   const [activeTab, setActiveTab] = useState("Programmable");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allToy/${activeTab}`)
+    fetch(`http://localhost:5000/allToy/${activeTab}?limit=3`)
       .then(response => response.json())
       .then(data => {
         setReactTabs(data);
@@ -23,36 +25,48 @@ const Rect_Tabs = () => {
   };
 
   return (
-    <div className='flex justify-center items-center mt-5 mb-5'>
+    <div className='mt-5 mb-5'>
       <Tabs>
-        <TabList>
+        <TabList className='flex items-center justify-center'>
           <Tab onClick={() => handleTabClick("Programmable")}>Programmable Robots</Tab>
           <Tab onClick={() => handleTabClick("RemoteControl")}>Remote Control Robots</Tab>
           <Tab onClick={() => handleTabClick("TransformingRobots")}>Transforming Robots</Tab>
         </TabList>
 
         <TabPanel>
-          {ReactTabs.map(job => (
-            <div key={job.id}>
-              <h2>{job.title}</h2>
-            
-            </div>
-          ))}
+          <div className='w-11/12 md:10/12 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 
+      lg:grid-cols-3 gap-5 mt-10 py-3 px-3'>
+            {ReactTabs.map(ReactTab => <ProgrammableRobots
+              key={ReactTab}
+              ReactTab={ReactTab}
+            ></ProgrammableRobots>)}
+          </div>
         </TabPanel>
+
+
         <TabPanel>
-          {ReactTabs.map(job => (
-            <div key={job.id}>
-              <h2>{job.title}</h2>
-             
-            </div>
-          ))}
+          <div className='w-11/12 md:10/12 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 
+      lg:grid-cols-3 gap-5 mt-10 py-3 px-3'>
+            {ReactTabs.map(ReactTab => <RemoteControlRobots
+              key={ReactTab}
+              ReactTab={ReactTab}
+            ></RemoteControlRobots>)}
+          </div>
         </TabPanel>
+
+
+
         <TabPanel>
-          {ReactTabs.map(ReactTab => <ToyTabCard
-          key={ReactTab}
-          ReactTab ={ReactTab}
-          ></ToyTabCard>)}
+          <div className='w-11/12 md:10/12 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 
+      lg:grid-cols-3 gap-5 mt-10 py-3 px-3'>
+            {ReactTabs.map(ReactTab => <TransformingRobots
+              key={ReactTab}
+              ReactTab={ReactTab}
+            ></TransformingRobots>)}
+          </div>
         </TabPanel>
+
+
       </Tabs>
     </div>
   );

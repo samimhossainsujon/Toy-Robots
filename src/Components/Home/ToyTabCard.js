@@ -6,7 +6,7 @@ const ToyTabCard = ({ReactTab}) => {
     console.log(photoUrl);
     return (
         <div>
-            
+            <img src={photoUrl} alt="" />
         </div>
     );
 };

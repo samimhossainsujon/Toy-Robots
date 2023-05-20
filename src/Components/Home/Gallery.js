@@ -13,7 +13,7 @@ const Gallery = () => {
          text-black font-serif font-extrabold
          mt-20 mb-5
          ">Photo Gallery</h2></div>
-      <div className="grid grid-cols-3 gap-5 px-20  bg-base-200 my-container">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 px-20  bg-base-200 my-container">
 
         {ToyDetails.map((ToyDetail) => (
           <GalleryImg
