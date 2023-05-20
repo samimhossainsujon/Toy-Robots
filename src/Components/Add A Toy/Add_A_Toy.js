@@ -45,7 +45,7 @@ const Add_A_Toy = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(AddToy)}>
+    <form data-aos="fade-up-right" onSubmit={handleSubmit(AddToy)}>
       <div className="px-24">
         <div>
           <label className="label">
@@ -146,10 +146,11 @@ const Add_A_Toy = () => {
           </label>
 
           <select className="text-input" {...register("status")}>
-            <option value="">select</option>
-            <option value="TRACTOR">TRACTOR</option>
-            <option value="racing">racing</option>
-            <option value="Dancing">Dancing</option>
+            <option>select</option>
+            <option value="Programmable">Programmable</option>
+            <option value="RemoteControl">Remote Control</option>
+            <option value="TransformingRobots">Transforming Robots</option>
+
           </select>
 
         </div>

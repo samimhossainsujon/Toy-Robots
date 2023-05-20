@@ -3,17 +3,13 @@ import { useLoaderData } from "react-router-dom";
 import GalleryImg from "./GalleryImg";
 
 const Gallery = () => {
-  // ?limit=20
   const ToyDetails = useLoaderData();
-  // const { photoUrl, ToyName, price, availableQuantity, rating: originalRating,
-  //   SellerName, detailsPage, sellerEmail } = ToyDetails;
 
-  // console.log(ToyDetails);
   return (
 
     <div>
       <div>
-        <h2 className="text-center text-3xl
+        <h2 className="underline text-center text-3xl
          text-black font-serif font-extrabold
          mt-20 mb-5
          ">Photo Gallery</h2></div>

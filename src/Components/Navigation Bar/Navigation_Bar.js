@@ -68,8 +68,8 @@ const Navigation_Bar = () => {
 
 
     return (
-        <div>
-            <div className="navbar bg-slate-400 mb-5 justify-start">
+        <div className='px-5 mx-5 rounded font-bold'>
+            <div className="navbar  mb-5 justify-start">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">

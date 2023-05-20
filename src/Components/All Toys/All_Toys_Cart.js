@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import Rating from 'react-rating-stars-component';
 import Rating from 'react-rating';
-import { FaArrowRight, FaRegStar, FaStar } from 'react-icons/fa';
+import {FaRegStar, FaStar } from 'react-icons/fa';
 
 
 

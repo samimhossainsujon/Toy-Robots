@@ -16,7 +16,7 @@ const ToyDetails = () => {
     const ratingString = rating.toString();
 
     return (
-        <div className=''>
+        <div>
             <div>
                 <div className="w-full flex justify-center mb-5">
                     <img src={photoUrl} alt='' />

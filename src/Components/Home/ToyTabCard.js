@@ -1,6 +1,9 @@
 import React from 'react';
 
-const ToyTabCard = () => {
+const ToyTabCard = ({ReactTab}) => {
+
+    const { photoUrl} = ReactTab;
+    console.log(photoUrl);
     return (
         <div>
             

@@ -8,6 +8,8 @@ import Swal from 'sweetalert2';
 const My_Toys = () => {
     const { User } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([]);
+  
+   
 
 
     useEffect(() => {
@@ -23,7 +25,7 @@ const My_Toys = () => {
             });
     }, []);
 
-    const ToysDelete = _id => {       
+    const ToysDelete = _id => {
 
         Swal.fire({
             title: 'Are you sure?',
@@ -40,17 +42,16 @@ const My_Toys = () => {
                     headers: {
                         'content-type': 'application/json',
                     },
-                    // No need to stringify the result, send only the _id
+
                 })
                     .then(response => response.json())
-                    .then(data => {
-                        console.log(data);
-                        if (data.deleteCount > 0) {
+                    .then(data => { 
+                         if (data.deleteCount > 0) {
                             Swal.fire(
                                 'Deleted!',
                                 'Your file has been deleted.',
                                 'success'
-                            )                           
+                            )
                         }
                     })
                     .catch((error) => {
@@ -61,7 +62,7 @@ const My_Toys = () => {
         });
     };
 
-    
+
 
     return (
         <div data-aos="fade-up-right" className='pr-10 ps-10'>
