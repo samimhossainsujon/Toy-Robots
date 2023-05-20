@@ -7,6 +7,7 @@ const Add_A_Toy = () => {
   const [error, setError] = useState('');
 
   const { register, handleSubmit } = useForm();
+ 
 
   const AddToy = (data) => {
     const allDetails = { ...data };
@@ -141,13 +142,16 @@ const Add_A_Toy = () => {
 
         <div>
           <label className="label">
-            <span className="text-center">Select Option</span>
+            <span className="text-center"></span>
           </label>
-          <select className="text-input" {...register('selectedOption')}>
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
+
+          <select className="text-input" {...register("status")}>
+            <option value="">select</option>
+            <option value="TRACTOR">TRACTOR</option>
+            <option value="racing">racing</option>
+            <option value="Dancing">Dancing</option>
           </select>
+
         </div>
 
         <div>

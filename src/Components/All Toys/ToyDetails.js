@@ -1,6 +1,9 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { SiGmail } from 'react-icons/si';
+import Rating from 'react-rating-stars-component';
+
+
 
 
 const ToyDetails = () => {
@@ -33,6 +36,20 @@ const ToyDetails = () => {
                     SiGmail
 
                     <h1 className='mt-5'> <span className='font-extrabold text-black text-xl'>Toy Details:</span> {detailsPage}</h1>
+                </div>
+
+
+                <div className='flex items-center px-14'>
+                    <h1 className='font-bold text-black mr-2'>Rating </h1>
+                    <Rating
+                        className='text-2xl' 
+                        value={Math.round(parseFloat(ratingString) || 0)}
+                        edit={false}
+                    />
+                   
+                    <span className='ms-2 text-lg text-black font-extrabold'>
+                        {ratingString}
+                    </span>
                 </div>
             </div>
         </div>

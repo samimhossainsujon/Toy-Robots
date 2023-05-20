@@ -64,7 +64,7 @@ const My_Toys = () => {
     
 
     return (
-        <div className='pr-10 ps-10'>
+        <div data-aos="fade-up-right" className='pr-10 ps-10'>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>

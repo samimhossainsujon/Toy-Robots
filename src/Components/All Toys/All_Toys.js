@@ -26,8 +26,6 @@ const All_Toys = () => {
 
     return (
         <div>
-
-
             <div className="flex justify-center gap-6">
                 <input
                     type="text"

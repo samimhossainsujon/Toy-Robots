@@ -1,15 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import Rating from 'react-rating-stars-component';
+import Rating from 'react-rating';
+import { FaArrowRight, FaRegStar, FaStar } from 'react-icons/fa';
+
+
+
 
 const All_Toys_Cart = ({ allToy }) => {
 
 
 
-    const { _id, photoUrl, ToyName, price, availableQuantity, rating, SellerName, detailsPage, sellerEmail } = allToy;
-   
-   
+    const { _id, photoUrl, ToyName, price, availableQuantity, rating: originalRating,
+        SellerName, detailsPage, sellerEmail } = allToy;
+    console.log(allToy);
+
+    const rating = 4;
+    const ratingString = rating.toString();
     return (
-        <div>
+        <div data-aos="fade-left"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
 
             <div className="card w-full bg-base-100 shadow-2xl border-4 border-indigo-600">
                 <figure className="">
@@ -21,9 +32,32 @@ const All_Toys_Cart = ({ allToy }) => {
                         <p>price: {price}</p>
                         <p>availableQuantity:{availableQuantity}</p>
                     </div>
-                    <Link to={`/ToyDetails/${_id}`} className="card-actions">
-                        <button className="btn btn-primary">View Details</button>
-                    </Link>
+
+                    <div className='flex gap-10'>
+                        <div className=" text-center position-absolute bottom-0 end-50 mb-3 items-center">
+                            <Rating
+                                readonly
+                                className="text-success"
+                                placeholderRating={rating}
+                                emptySymbol={<FaRegStar />}
+                                placeholderSymbol={<FaStar> </FaStar>}
+                                fullSymbol={<FaStar> </FaStar>}
+                            />
+                            <span className='ms-2 text-lg text-black font-extrabold'>
+                                {ratingString}
+                            </span>
+                        </div>
+
+
+                        <div>
+                            <Link to={`/ToyDetails/${_id}`} className="card-actions">
+                                <button className="btn btn-outline btn-secondary">View Details</button>
+                            </Link>
+                        </div>
+                    </div>
+
+
+
                 </div>
             </div>
 
