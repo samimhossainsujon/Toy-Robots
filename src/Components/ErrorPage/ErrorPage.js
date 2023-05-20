@@ -15,11 +15,12 @@ const ErrorPage = () => {
             <p className='text-center mt-1 text-red-700 text-6xl font-extrabold'>PAGE NOT FOUND</p>
             <div className='w-1/2 mx-auto' >
                 <Lottie animationData={animationData}> </Lottie>
-
-                <Link to='/'>
-
-                    <button className="btn btn-outline btn-secondary">Go to Home</button>
-                </Link>
+              
+                <div className='flex items-center justify-center'>
+                    <Link to='/'>
+                        <button className="btn btn-outline btn-secondary">Go to Home</button>
+                    </Link>
+                </div>
 
 
 

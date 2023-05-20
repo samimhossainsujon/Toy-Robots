@@ -26,8 +26,12 @@ const Navigation_Bar = () => {
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/allToy'>All Toys</Link></li>
-        <li><Link to='/myToys'>My Toys</Link></li>
-        <li><Link to='/addAToy'>Add A Toy</Link></li>
+        {User && (
+            <>
+                <li><Link to='/myToys'>My Toys</Link></li>
+                <li><Link to='/addAToy'>Add A Toy</Link></li>
+            </>
+        )}
         <li><Link to='/blog'>Blogs</Link></li>
 
 
@@ -49,7 +53,8 @@ const Navigation_Bar = () => {
                     </label>
                     {User?.email && isDropdownOpen && (
                         <div className="dropdown-content">
-                            <button className='btn btn-outline btn-secondary' onClick={UserLogOut}>Log Out</button>
+                            <button className='btn btn-outline btn-secondary' 
+                            onClick={UserLogOut}>Log Out</button>
                         </div>
                     )}
                 </div>
