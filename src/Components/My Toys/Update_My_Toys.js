@@ -28,7 +28,7 @@ const Update_My_Toys = () => {
     console.log(_id);
 
     const HandelToyDataUpdate = event => {
-        event.preventDefault();
+        event.preventDefault();        
         const form = event.target;
         const photoUrl = form.photoUrl.value;
         const ToyName = form.ToyName.value;
@@ -61,6 +61,7 @@ const Update_My_Toys = () => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
                     setSuccess(true);
+                    
                     Swal.fire({
                         icon: "success",
                         title: "Update done",

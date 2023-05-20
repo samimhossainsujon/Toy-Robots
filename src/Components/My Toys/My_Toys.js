@@ -21,10 +21,9 @@ const My_Toys = () => {
             .catch(error => {
                 console.log(error);
             });
-    }, [User?.sellerEmail]);
+    }, []);
 
-    const ToysDelete = _id => {
-        console.log(_id);
+    const ToysDelete = _id => {       
 
         Swal.fire({
             title: 'Are you sure?',
@@ -41,7 +40,7 @@ const My_Toys = () => {
                     headers: {
                         'content-type': 'application/json',
                     },
-                    body: JSON.stringify(result)
+                    // No need to stringify the result, send only the _id
                 })
                     .then(response => response.json())
                     .then(data => {
@@ -51,7 +50,7 @@ const My_Toys = () => {
                                 'Deleted!',
                                 'Your file has been deleted.',
                                 'success'
-                            )
+                            )                           
                         }
                     })
                     .catch((error) => {
@@ -59,11 +58,10 @@ const My_Toys = () => {
                     })
 
             }
-        })
+        });
+    };
 
-    }
-
-    // photoUrl, ToyName, price, rating,SellerName, detailsPage, sellerEmail
+    
 
     return (
         <div className='pr-10 ps-10'>
@@ -82,7 +80,7 @@ const My_Toys = () => {
                     <tbody>
                         {myToys.map((myToy, index) => (
                             <tr key={myToy._id}
-                            myToy={myToy}
+                                myToy={myToy}
                             >
                                 <td className='font-extrabold text-black'>{index + 1}</td>
                                 <td>{myToy.price}</td>

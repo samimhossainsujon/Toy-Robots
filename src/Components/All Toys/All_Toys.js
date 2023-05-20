@@ -7,10 +7,10 @@ const All_Toys = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allToy')
+        fetch('http://localhost:5000/allToy?limit=20')
             .then(response => response.json())
             .then(data => {
-                setAllToys(data);                
+                setAllToys(data);
             });
     }, []);
 
