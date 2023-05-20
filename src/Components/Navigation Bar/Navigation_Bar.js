@@ -16,6 +16,7 @@ const Navigation_Bar = () => {
         setIsDropdownOpen(false);
     };
 
+    console.log(User);
 
 
     const webSiteName = <>
@@ -53,8 +54,10 @@ const Navigation_Bar = () => {
                     </label>
                     {User?.email && isDropdownOpen && (
                         <div className="dropdown-content">
+                        
                             <button className='btn btn-outline btn-secondary' 
                             onClick={UserLogOut}>Log Out</button>
+                            <p>{User.displayName}</p>
                         </div>
                     )}
                 </div>
