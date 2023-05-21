@@ -7,20 +7,22 @@ import Swal from 'sweetalert2';
 import useTitleSetup from '../TitleSetup/TitleSetup';
 
 const My_Toys = () => {
-    useTitleSetup('My Toys' )
+    useTitleSetup('My Toys')
     const { User } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([]);
     const [loading, setLoading] = useState(true);
-  
-   
+
+
 
 
     useEffect(() => {
         fetch(`http://localhost:5000/myToys/${User?.email}`)
             .then(response => response.json())
             .then(data => {
-                setMyToys(data);
-                
+                const sortedData = data.sort((a, b) => a.price - b.price);
+
+                setMyToys(sortedData);
+
             })
             .catch(error => {
                 console.log(error);
@@ -47,8 +49,8 @@ const My_Toys = () => {
 
                 })
                     .then(response => response.json())
-                    .then(data => { 
-                         if (data.deleteCount > 0) {
+                    .then(data => {
+                        if (data.deleteCount > 0) {
                             Swal.fire(
                                 'Deleted!',
                                 'Your file has been deleted.',
