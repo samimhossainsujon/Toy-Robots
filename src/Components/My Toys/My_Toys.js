@@ -13,14 +13,11 @@ const My_Toys = () => {
     const [loading, setLoading] = useState(true);
 
 
-
-
     useEffect(() => {
         fetch(`http://localhost:5000/myToys/${User?.email}`)
             .then(response => response.json())
             .then(data => {
                 const sortedData = data.sort((a, b) => a.price - b.price);
-
                 setMyToys(sortedData);
 
             })
@@ -30,7 +27,6 @@ const My_Toys = () => {
     }, []);
 
     const ToysDelete = _id => {
-
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -44,9 +40,8 @@ const My_Toys = () => {
                 fetch(`http://localhost:5000/updateMyToys/${_id}`, {
                     method: 'DELETE',
                     headers: {
-                        'content-type': 'application/json',
+                        'Content-Type': 'application/json', // Corrected content-type header
                     },
-
                 })
                     .then(response => response.json())
                     .then(data => {
@@ -55,16 +50,17 @@ const My_Toys = () => {
                                 'Deleted!',
                                 'Your file has been deleted.',
                                 'success'
-                            )
+                            );
+                         
                         }
                     })
                     .catch((error) => {
                         console.log(error);
-                    })
-
+                    });
             }
         });
     };
+
 
 
 
