@@ -28,7 +28,7 @@ const Update_My_Toys = () => {
         detailsPage,
         sellerEmail
     } = data;
-    console.log(_id);
+   
 
     const HandelToyDataUpdate = event => {
         event.preventDefault();        

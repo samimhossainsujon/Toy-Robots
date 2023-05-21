@@ -20,8 +20,7 @@ const My_Toys = () => {
             .then(response => response.json())
             .then(data => {
                 setMyToys(data);
-                console.log(data);
-                // console.log(data);
+                
             })
             .catch(error => {
                 console.log(error);

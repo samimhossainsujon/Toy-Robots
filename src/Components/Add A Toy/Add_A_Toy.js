@@ -15,7 +15,7 @@ const Add_A_Toy = () => {
     const allDetails = { ...data };
 
     if (Object.values(allDetails).every((value) => value !== '')) {
-      console.log(allDetails);
+      
 
       fetch('http://localhost:5000/addToy', {
         method: 'POST',
