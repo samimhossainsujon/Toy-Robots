@@ -16,6 +16,8 @@
 
 - 7. Set up Routing: Implement routing in your React application using a library like React Router. Define a route for the toy robot list page and another route for the toy robot detail page. Configure the route for the detail page to accept a parameter for the selected toy's ID or unique identifier.
 
-     To view the live site, visit: [url](https://chic-faun-1d0ec4.netlify.app/)
+     To view the live site, visit: [url](https://test-coding-f1925.web.app/)
 
-To view the server site, visit: [url](https://assignment-10-server-side-samimhossainsujon.vercel.app/)
+     to view the live site Netlify
+
+To view the server site, visit: [url](https://assignment-11-server-blue.vercel.app/)
