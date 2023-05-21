@@ -20,7 +20,10 @@ const Navigation_Bar = () => {
 
 
     const webSiteName = <>
-        <h1>Toy Robots</h1>
+        <div className='lg:flex items-center justify-center'>
+            <img className='w-12 h-12' src='https://freepngimg.com/download/technology/35443-7-robot-free-download.png' alt="" />
+            <h1>Toy Robots</h1>
+        </div>
     </>
 
 
@@ -54,9 +57,9 @@ const Navigation_Bar = () => {
                     </label>
                     {User?.email && isDropdownOpen && (
                         <div className="dropdown-content">
-                        
-                            <button className='btn btn-outline btn-secondary' 
-                            onClick={UserLogOut}>Log Out</button>
+
+                            <button className='btn btn-outline btn-secondary'
+                                onClick={UserLogOut}>Log Out</button>
                             <p>{User.displayName}</p>
                         </div>
                     )}
