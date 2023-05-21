@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useTitleSetup from '../TitleSetup/TitleSetup';
 
 const Update_My_Toys = () => {
+
+    useTitleSetup('Update My Toy' )
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
     const updateMyToys = useLoaderData();
 
     const [data, setdata] = useState(updateMyToys);
-    console.log(data);
+    
 
     useEffect(() => {
         setdata(updateMyToys)

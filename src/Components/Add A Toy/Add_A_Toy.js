@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import { useForm } from 'react-hook-form';
+import useTitleSetup from '../TitleSetup/TitleSetup';
 
 const Add_A_Toy = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
+  useTitleSetup('Add Toy' )
 
   const { register, handleSubmit } = useForm();
  

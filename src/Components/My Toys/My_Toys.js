@@ -4,10 +4,13 @@ import { MdDelete } from 'react-icons/md';
 import { AiFillEdit } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useTitleSetup from '../TitleSetup/TitleSetup';
 
 const My_Toys = () => {
+    useTitleSetup('My Toys' )
     const { User } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([]);
+    const [loading, setLoading] = useState(true);
   
    
 

@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import useTitleSetup from '../TitleSetup/TitleSetup';
 
 const Login = () => {
     const { UserLogin, UserGoogleLogin } = useContext(AuthContext);
@@ -10,6 +11,8 @@ const Login = () => {
     const Navigate = useNavigate();
     const Location = useLocation();
     const [Success, setSuccess] = useState();
+
+    useTitleSetup('login' )
 
     const from = Location.state?.from?.pathname || "/";
 

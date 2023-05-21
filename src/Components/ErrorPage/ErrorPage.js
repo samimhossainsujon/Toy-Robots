@@ -2,11 +2,13 @@ import React from 'react';
 import animationData from '../../assets/98642-error-404.json';
 import Lottie from "lottie-react";
 import { Link } from 'react-router-dom';
+import useTitleSetup from '../TitleSetup/TitleSetup';
 
 
 
 
 const ErrorPage = () => {
+    useTitleSetup('Error Page' )
 
 
     return (

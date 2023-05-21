@@ -1,6 +1,8 @@
 import React from 'react';
+import useTitleSetup from '../TitleSetup/TitleSetup';
 
 const Blgos = () => {
+    useTitleSetup('Blog' )
     return (
         <div className='px-5 mx-5'>
             <div tabIndex={0} className="collapse collapse-plus border border-base-300 bg-base-100 rounded-box mb-6">

@@ -2,11 +2,13 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { SiGmail } from 'react-icons/si';
 import Rating from 'react-rating-stars-component';
+import useTitleSetup from '../TitleSetup/TitleSetup';
 
 
 
 
 const ToyDetails = () => {
+    useTitleSetup('ToyDetails' )
     const ToyDetail = useLoaderData();
     const { _id, photoUrl, ToyName, price, availableQuantity, rating: originalRating,
         SellerName, detailsPage, sellerEmail } = ToyDetail;

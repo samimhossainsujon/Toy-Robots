@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <div className='px-5 mx-5  mt-10 mb-10'>
-            <footer className="footer footer-center p-10 bg-slate-500 text-black">
+            <footer className="footer footer-center p-10 bg-slate-300 text-black">
                 <div>
                     <p className='text-5xl text-black'><FaRobot /></p>
                     <p className="font-bold">

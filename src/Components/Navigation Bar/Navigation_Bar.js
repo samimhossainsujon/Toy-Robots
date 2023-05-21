@@ -16,7 +16,7 @@ const Navigation_Bar = () => {
         setIsDropdownOpen(false);
     };
 
-    console.log(User);
+
 
 
     const webSiteName = <>

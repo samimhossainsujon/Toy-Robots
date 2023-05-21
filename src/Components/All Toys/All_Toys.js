@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import All_Toys_Cart from './All_Toys_Cart';
+import useTitleSetup from '../TitleSetup/TitleSetup';
 
 const All_Toys = () => {
+    useTitleSetup('All Toys')
     const [allToys, setAllToys] = useState([]);
     const [searchText, setSearchText] = useState('');
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allToy?limit=20')
+        fetch('https://assignment-11-server-blue.vercel.app/allToy?limit=20')
             .then(response => response.json())
             .then(data => {
                 setAllToys(data);
@@ -20,7 +22,7 @@ const All_Toys = () => {
             .then(data => {
                 setAllToys(data);
                 setLoading(false)
-                console.log(data);
+                // console.log(data);
             });
     };
 
