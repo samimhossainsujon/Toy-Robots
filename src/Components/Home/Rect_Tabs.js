@@ -10,7 +10,7 @@ const Rect_Tabs = () => {
   const [activeTab, setActiveTab] = useState("Programmable");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allToy/${activeTab}?limit=3`)
+    fetch(`https://assignment-11-server-blue.vercel.app/allToy/${activeTab}?limit=3`)
       .then(response => response.json())
       .then(data => {
         setReactTabs(data);

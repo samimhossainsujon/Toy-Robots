@@ -52,7 +52,7 @@ const Update_My_Toys = () => {
             sellerEmail
         };
 
-        fetch(`http://localhost:5000/updateMyToys/${_id}`, {
+        fetch(`https://assignment-11-server-blue.vercel.app/updateMyToys/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

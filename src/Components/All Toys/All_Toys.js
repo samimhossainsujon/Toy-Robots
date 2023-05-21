@@ -12,7 +12,7 @@ const All_Toys = () => {
     console.log(allToys);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allToy?limit=20')
+        fetch('https://assignment-11-server-blue.vercel.app/allToy?limit=20')
             .then(response => response.json())
             .then(data => {
                 console.log(data);
@@ -21,7 +21,7 @@ const All_Toys = () => {
     }, []);
 
     const handleSearch = () => {
-        fetch(`http://localhost:5000/allToySearch/${searchText}`)
+        fetch(`https://assignment-11-server-blue.vercel.app/allToySearch/${searchText}`)
             .then(response => response.json())
             .then(data => {
                 setAllToys(data);

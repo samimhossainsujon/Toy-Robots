@@ -14,7 +14,7 @@ const My_Toys = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myToys/${User?.email}`)
+        fetch(`https://assignment-11-server-blue.vercel.app/myToys/${User?.email}`)
             .then(response => response.json())
             .then(data => {
                 const sortedData = data.sort((a, b) => a.price - b.price);
@@ -27,6 +27,7 @@ const My_Toys = () => {
     }, []);
 
     const ToysDelete = _id => {
+
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -37,11 +38,12 @@ const My_Toys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/updateMyToys/${_id}`, {
+                fetch(`https://assignment-11-server-blue.vercel.app/updateMyToys/${_id}`, {
                     method: 'DELETE',
                     headers: {
-                        'Content-Type': 'application/json', // Corrected content-type header
+                        'content-type': 'application/json',
                     },
+
                 })
                     .then(response => response.json())
                     .then(data => {
@@ -50,17 +52,17 @@ const My_Toys = () => {
                                 'Deleted!',
                                 'Your file has been deleted.',
                                 'success'
-                            );
-                         
+                            )
+                            loading(true)
                         }
                     })
                     .catch((error) => {
                         console.log(error);
-                    });
+                    })
+
             }
         });
     };
-
 
 
 

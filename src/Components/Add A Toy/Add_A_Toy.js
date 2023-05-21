@@ -17,7 +17,7 @@ const Add_A_Toy = () => {
     if (Object.values(allDetails).every((value) => value !== '')) {
       
 
-      fetch('http://localhost:5000/addToy', {
+      fetch('https://assignment-11-server-blue.vercel.app/addToy', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
